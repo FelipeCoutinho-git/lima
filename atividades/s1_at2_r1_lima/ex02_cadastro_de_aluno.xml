@@ -1,0 +1,20 @@
+<!-- Exercício 2: Cadastro de Aluno
+Analise o Código
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aluno matricula=202501 curso="Informática">
+<nome>João Silva</nome>
+<idade=20></idade>
+</aluno> -->
+
+O código acima apresenta um erro de sintaxe, pois a tag <idade> não foi fechada corretamente.
+A tag <idade> deve ser fechada antes de abrir a tag </aluno> 
+
+<!-- Código corrigido -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aluno matricula"202501" curso="Informática">
+<nome>João Silva</nome>
+<idade>20</idade>
+</aluno> 

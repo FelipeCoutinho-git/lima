@@ -1,0 +1,29 @@
+<!-- Exercício 4: Pedido de Venda
+Analise o Código
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pedido>
+<cliente>
+<nome>Maria</nome>
+<itens>
+<item>Notebook</item>
+<item>Mouse</item>
+</cliente>
+</itens>
+</pedido> -->
+
+O código acima apresenta um erro de sintaxe, pois a tag <itens> não foi fechada corretamente.
+A tag <itens> deve ser fechada antes de abrir a tag </cliente>
+
+<!-- Código corrigido -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+    <pedido>
+        <itens>
+            <item>Notebook</item>
+            <item>Mouse</item>
+        </itens>
+    <cliente>
+        <nome>Maria</nome>
+    </cliente>
+    </pedido>

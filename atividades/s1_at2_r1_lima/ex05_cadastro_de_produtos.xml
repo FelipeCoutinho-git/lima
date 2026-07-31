@@ -1,0 +1,25 @@
+<!-- Exercício 5: Cadastro de Produtos
+Analise o Código
+<?xml version="1.0" encoding="UTF-8"?>
+
+<produtos>
+
+<nome produto>Notebook</nome produto>
+
+<1preco>4500</1preco>
+
+</produtos> -->
+
+O código acima apresenta um erro de sintaxe, pois a tag <nome produto> não é válida.
+A tag <nome produto> deve ser substituída por <nome_produto> para que seja válida.
+Além disso, a tag <1preco> não é válida, pois não pode começar com um número. 
+A tag <1preco> deve ser substituída por <preco> para que seja válida.
+
+<!-- Código corrigido -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <produtos>
+        <nome_produto>Notebook</nome_produto>
+        <preco>4500</preco>
+    </produtos>

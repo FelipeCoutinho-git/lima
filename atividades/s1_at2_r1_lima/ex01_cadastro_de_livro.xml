@@ -1,0 +1,21 @@
+<!-- Exercício 1: Cadastro de Livro -->
+<!-- Analise o Código -->
+
+<!--<?xml version="1.0" encoding="UTF-8"?>
+
+<livro>
+<titulo>Banco de Dados
+<autor>Maria Oliveira</autor>
+<ano>2025</ano>
+</livro>-->
+
+O código acima apresenta um erro de sintaxe, pois a tag <titulo> não foi fechada corretamente. 
+A tag <titulo> deve ser fechada antes de abrir a tag <autor> 
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<livro>
+<titulo>Banco de Dados</titulo>
+<autor>Maria Oliveira</autor>
+<ano>2025</ano>
+</livro>

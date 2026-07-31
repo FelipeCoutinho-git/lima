@@ -1,0 +1,20 @@
+<!--Exercício 3: Empresa
+Analise o Código
+<?xml version=1.0 encoding="UTF-8">
+
+<empresa>
+<nome>Tech & Sistemas</nome>
+<cidade>Curitiba</cidade>
+</empresa> -->
+
+ O código acima apresenta um erro de sintaxe, pois a declaração do XML não está corretamente formatada. 
+ A declaração correta deve ser: <?xml version="1.0" encoding="UTF-8"?> 
+ 
+ <!-- Código corrigido -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<empresa>
+<nome>Tech & Sistemas</nome>
+<cidade>Curitiba</cidade>
+</empresa>

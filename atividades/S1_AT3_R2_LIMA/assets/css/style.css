@@ -1,0 +1,10 @@
+body {
+    font-family: cursive;
+    background-color: lightgray;
+}
+.titulo_h1, #paragrafo {
+    text-align: left;
+    color: darkblue;
+    font-size: 36px;
+}
+

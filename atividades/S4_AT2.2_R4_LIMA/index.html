@@ -33,33 +33,125 @@
         <li>Cadeiras ergonômicas</li>
         <img src="https://www.comfy.com.br/media/Sem_T_tulo-1.webp" alt="Cadeira ergonômica" width="150" height="150">
     </ul>
+    <hr>
+    </form>
+    </Fieldset>
     <h3>Ofertas Especiais</h3>
     <ul>
         <li>Combo de teclado e mouse com desconto</li>
         <img src="https://img.terabyteshop.com.br/produto/g/combo-gamer-superframe-teclado-mecanico-champion-mouse-gamer-boss-headset-gamer-velka_105261.png"
             alt="Combo de teclado e mouse" width="150" height="150">
     </ul>
-    <hr>
-    <!-- Lista de preços -->
-    <h4>Preços</h4>
-    <ul>
-        <li>Teclado mecânico: R$ 299,99</li>
-        <li>Mouse gamer: R$ 149,99</li>
-        <li>Headset de alta qualidade: R$ 199,99</li>
-        <li>Cadeira ergonômica: R$ 499,99</li>
-    </ul>
-    <hr>
-    <p>Visite nossa loja online para conferir os produtos disponíveis!</p>
-    <p>
-    <a href="https://web.whatsapp.com" target="_blank">
-        <strong>[ 💬 COMPRAR AGORA VIA WHATSAPP ]</strong>
-    </a>
-</p>
-    <!-- Rodapé organizado com link de contato -->
-    <footer>
-        <p>Fale conosco: <a href="mailto:contato@pixelegear.com" class="link-contato">contato@pixelegear.com</a></p>
-        <p>© 2026 PixelGear eSports Store. Todos os direitos reservados.</p>
-    </footer>
+    <!-- Fieldset para escolher opções de produtos -->
+    <fieldset>
+        <h2>Escolha suas opções</h2>
+        <p>Selecione os produtos que deseja adicionar ao seu carrinho:</p>
+        <form>
+            <label for="produto">Selecione um produto:</label>
+            <select id="produto" name="produto">
+                <option value="teclado">Teclado mecânico</option>
+                <option value="mouse">Mouse gamer</option>
+                <option value="headset">Headset de alta qualidade</option>
+                <option value="cadeira">Cadeira ergonômica</option>
+                <option value="combo">Combo de teclado e mouse</option>
+            </select>
+            <br><br>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" max="10" required>
+            <br><br>
+            <button type="submit">Adicionar ao carrinho</button>
+        </form>
+    </fieldset>
+    <!-- Fieldset para configurações de hardware -->
+    <fieldset>
+        <h2>Configurações de Hardware</h2>
+        </legend>
+        <p>Escolha as configurações ideais para o seu setup de jogos:</p>
+        <label for="resolucao">Resolução do monitor:</label>
+        <select id="resolucao" name="resolucao">
+            <option value="1080p">1920x1080 (Full HD)</option>
+            <option value="1440p">2560x1440 (Quad HD)</option>
+            <option value="4k">3840x2160 (4K Ultra HD)</option>
+        </select>
+        <br><br>
+        <label for="fps">Taxa de quadros por segundo (FPS):</label>
+        <input type="number" id="fps" name="fps" min="30" max="240" required>
+        </form>
+
+        <!--Campo para observações-->
+        observações:<br>
+        <textarea name="observacoes" rows="4" cols="50" placeholder="Digite suas observações aqui..."></textarea>
+        </p>
+        <button type="submit">Salvar Configurações</button>
+        <br>
+        <hr>
+        <!-- Lista de preços -->
+        <h4>Preços</h4>
+        <ul>
+            <li>Teclado mecânico: R$ 299,99</li>
+            <li>Mouse gamer: R$ 149,99</li>
+            <li>Headset de alta qualidade: R$ 199,99</li>
+            <li>Cadeira ergonômica: R$ 499,99</li>
+        </ul>
+        <hr>
+
+        <!-- Dados do Cliente -->
+        <h2>Dados do Cliente</h2>
+        <fieldset>
+
+
+            <p>
+                <label for="nome">Nome completo:*</label><br>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+            </p>
+
+
+            <p>
+                <label for="email">E-mail:*</label><br>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </p>
+
+
+            <p>
+                <label for="telefone">Telefone:</label><br>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            </p>
+            <button type="submit">Salvar</button>
+        </fieldset>
+
+
+        <br>
+        <p>
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50"
+                placeholder="Digite sua mensagem aqui..."></textarea>
+            <br><button type="submit">Enviar</button>
+        </p>
+        <hr>
+        </p>
+        <!-- Rodapé organizado com link de contato e fieldset de entrar em contato e mandar mensagem -->
+        <footer>
+            <p>Fale conosco: <a href="mailto:contato@pixelegear.com" class="link-contato">contato@pixelegear.com</a></p>
+            <fieldset>
+                <legend>Entre em contato</legend>
+                <form>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                    <br><button type="submit">Enviar</button>
+
+                </form>
+                <p>Visite nossa loja online para conferir os produtos disponíveis!</p>
+                <p>
+                    <a href="https://web.whatsapp.com" target="_blank">
+                        <strong>[ 💬 COMPRAR AGORA VIA WHATSAPP ]</strong>
+                    </a>
+            </fieldset>
+            <p>© 2026 PixelGear eSports Store. Todos os direitos reservados.</p>
+        </footer>
 </body>
 
 </html>

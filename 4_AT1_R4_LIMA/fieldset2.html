@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PixelGear - Loja especializada em PC Gamer, Periféricos e Setups eSports.">
+    <title>PixelGear | High Performance Gaming</title>
+</head>
+
+<!-- bgcolor="#121214" text="#E1E1E6" -->
+
+<body>
+    <form>
+
+        <!-- Grupo 2: Configuração do Hardware -->
+        <fieldset>
+            <legend><strong>2. Preferências do Hardware</strong></legend>
+
+            <p>
+                <label for="gpu">Escolha a Placa de Vídeo Principal:*</label><br>
+                <select id="gpu" name="gpu" required>
+                    <option value="">-- Selecione uma GPU --</option>
+                    <option value="gtx1650">NVIDIA GTX 1650 4GB (Entry)</option>
+                    <option value="rtx4060ti">NVIDIA RTX 4060 Ti 8GB (Mid-Range)</option>
+                    <option value="rtx4090">NVIDIA RTX 4090 24GB (High-End 4K)</option>
+                </select>
+            </p>
+
+            <p>
+                <strong>Objetivo Principal da Máquina:*</strong><br>
+                <input type="radio" id="jogos" name="objetivo" value="jogos">
+                <label for="jogos">Jogos Eletrônicos / eSports</label><br>
+
+                <input type="radio" id="streaming" name="objetivo" value="streaming">
+                <label for="streaming">Live Stream / Criação de Conteúdo</label><br>
+
+                <input type="radio" id="trabalho" name="objetivo" value="trabalho">
+                <label for="trabalho">Edição de Vídeo 3D / Arquitetura</label>
+            </p>
+
+            <p>
+                <strong>Serviços e Adicionais Desejados:</strong><br>
+                <input type="checkbox" id="rgb" name="adicionais[]" value="rgb_extra">
+                <label for="rgb">Fitas de LED RGB Adicionais no Gabinete</label><br>
+
+                <input type="checkbox" id="overclock" name="adicionais[]" value="overclock">
+                <label for="overclock">Perfil de Overclock Configurado na BIOS</label><br>
+
+                <input type="checkbox" id="garantia_estendida" name="adicionais[]" value="garantia3anos">
+                <label for="garantia_estendida">Garantia Estendida de 3 Anos PixelGear Care</label>
+            </p>
+
+            <p>
+                <label for="observacoes"><strong>Observações ou Dúvidas Específicas:</strong></label><br>
+                <textarea id="observacoes" name="observacoes" rows="4" cols="50"
+                    placeholder="Descreva jogos específicos que pretende rodar ou preferências de marcas..."></textarea>
+            </p>
+
+            <p>
+                <label for="foto_referencia">Anexar Print ou Foto do Setup de Referência:</label><br>
+                <input type="file" id="foto_referencia" name="foto_referencia" accept="image/*">
+            </p>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">🚀 ENVIAR SOLICITAÇÃO DE ORÇAMENTO</button>
+        <button type="reset">🧹 Limpar Campos</button>
+
+    </form>
+
+    <hr>
+
+    <!-- Rodapé -->
+    <p><i>"Desempenho não é um luxo, é uma necessidade."</i> — <small>PixelGear Team 2026</small></p>
+
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelGear eSports Store — Pro Edition</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS da Aplicação -->
+    <link rel="stylesheet" href="style_IA.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- CABEÇALHO CYBERPUNK -->
+        <header class="main-header">
+            <div class="logo-area">
+                <span class="logo-badge">PRO GEAR</span>
+                <h1 class="neon-title">PIXELGEAR</h1>
+                <p class="subtitle">// HARDWARE & ESPORTS EQUIPMENT</p>
+            </div>
+        </header>
+
+        <!-- NAVEGAÇÃO DE ABAS JS -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="trocarAba('loja')">
+                <span class="btn-icon">🛍️</span> LOJA
+            </button>
+            <button class="tab-btn" onclick="trocarAba('carrinho')">
+                <span class="btn-icon">🛒</span> CARRINHO <span id="cart-badge" class="cart-count-badge">0</span>
+            </button>
+            <button class="tab-btn" onclick="trocarAba('pagamento')">
+                <span class="btn-icon">💳</span> PAGAMENTO
+            </button>
+            <button class="tab-btn" onclick="trocarAba('hardware')">
+                <span class="btn-icon">⚡</span> SETUP RIG
+            </button>
+            <button class="tab-btn" onclick="trocarAba('cadastro')">
+                <span class="btn-icon">👤</span> CADASTRO
+            </button>
+            <button class="tab-btn" onclick="trocarAba('contato')">
+                <span class="btn-icon">💬</span> CONTATO
+            </button>
+        </nav>
+
+        <!-- CONTEÚDO DAS ABAS -->
+        <main class="tabs-body">
+
+            <!-- ABA 1: LOJA -->
+            <section id="content-loja" class="tab-pane active">
+                <div class="section-header">
+                    <h2>CATÁLOGO DE EQUIPAMENTOS</h2>
+                    <span class="status-indicator"><span class="dot"></span> LOJA ONLINE</span>
+                </div>
+
+                <div class="products-grid" id="products-grid">
+                    <!-- Gerado via JS -->
+                </div>
+
+                <!-- BANNER DE OFERTA -->
+                <div class="hero-offer">
+                    <span class="offer-badge">HOT DEAL -20%</span>
+                    <div class="offer-details">
+                        <h3>COMBO CHAMPION ESPORTS</h3>
+                        <p>Teclado Mecânico + Mouse Ultra-Light + Headset Pro</p>
+                        <div class="offer-price">
+                            <span class="old-price">R$ 649,97</span>
+                            <span class="new-price">R$ 519,97</span>
+                        </div>
+                    </div>
+                    <img src="https://img.terabyteshop.com.br/produto/g/combo-gamer-superframe-teclado-mecanico-champion-mouse-gamer-boss-headset-gamer-velka_105261.png" alt="Combo Gamer">
+                    <button class="btn-buy hero-btn" onclick="adicionarAoCarrinho(99, 'Combo Champion eSports', 519.97, 'https://img.terabyteshop.com.br/produto/g/combo-gamer-superframe-teclado-mecanico-champion-mouse-gamer-boss-headset-gamer-velka_105261.png')">GARANTIR COMBO</button>
+                </div>
+            </section>
+
+            <!-- ABA 2: CARRINHO -->
+            <section id="content-carrinho" class="tab-pane">
+                <div class="section-header">
+                    <h2>SEU CARRINHO DE COMPRAS</h2>
+                </div>
+
+                <div class="hud-box">
+                    <div id="carrinho-vazio" class="empty-state">
+                        <p>Seu carrinho está vazio no momento.</p>
+                        <button class="btn-action" onclick="trocarAba('loja')">IR PARA A LOJA</button>
+                    </div>
+
+                    <div id="carrinho-conteudo" style="display: none;">
+                        <table class="hud-table">
+                            <thead>
+                                <tr>
+                                    <th>PRODUTO</th>
+                                    <th>VALOR UNIT.</th>
+                                    <th>QTD</th>
+                                    <th>TOTAL</th>
+                                    <th>AÇÃO</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-table-body">
+                                <!-- Linhas inseridas via JS -->
+                            </tbody>
+                        </table>
+
+                        <div class="hud-footer">
+                            <div class="total-display">
+                                <span>TOTAL DO PEDIDO:</span>
+                                <span class="final-price" id="cart-total-display">R$ 0,00</span>
+                            </div>
+
+                            <button class="btn-action" onclick="trocarAba('pagamento')">IR PARA O PAGAMENTO ➔</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABA 3: ÁREA DE PAGAMENTO -->
+            <section id="content-pagamento" class="tab-pane">
+                <div class="section-header">
+                    <h2>CENTRAL DE PAGAMENTO</h2>
+                </div>
+
+                <div class="checkout-layout">
+                    <div class="cyber-form">
+                        <h3>ESCOLHA A FORMA DE PAGAMENTO</h3>
+                        
+                        <div class="payment-methods">
+                            <button class="pay-method-btn active" onclick="selecionarMetodoPagamento('pix', this)">⚡ PIX (5% OFF)</button>
+                            <button class="pay-method-btn" onclick="selecionarMetodoPagamento('cartao', this)">💳 CARTÃO DE CRÉDITO</button>
+                            <button class="pay-method-btn" onclick="selecionarMetodoPagamento('boleto', this)">📄 BOLETO BANCÁRIO</button>
+                        </div>
+
+                        <!-- Painel PIX -->
+                        <div id="pay-panel-pix" class="pay-panel active">
+                            <div class="pix-box">
+                                <p>Pague com PIX e receba 5% de desconto imediato:</p>
+                                <div class="qr-placeholder">
+                                    <div class="qr-code-box">██████████<br>██  PIX  ██<br>██████████</div>
+                                </div>
+                                <span class="pix-key" id="pix-key-code">pixelegear@esports.com.br</span>
+                                <button class="btn-action btn-sm" onclick="copiarPix()">COPIAR CHAVE PIX</button>
+                            </div>
+                        </div>
+
+                        <!-- Painel CARTÃO -->
+                        <div id="pay-panel-cartao" class="pay-panel">
+                            <div class="input-group">
+                                <label for="card-number">NÚMERO DO CARTÃO</label>
+                                <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="form-grid">
+                                <div class="input-group">
+                                    <label for="card-expiry">VALIDADE</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/AA">
+                                </div>
+                                <div class="input-group">
+                                    <label for="card-cvv">CVV</label>
+                                    <input type="text" id="card-cvv" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="card-holder">NOME NO CARTÃO</label>
+                                <input type="text" id="card-holder" placeholder="NOME IGUAL AO CARTÃO">
+                            </div>
+                        </div>
+
+                        <!-- Painel BOLETO -->
+                        <div id="pay-panel-boleto" class="pay-panel">
+                            <p class="boleto-info">O boleto será gerado após a confirmação. Vencimento em até 3 dias úteis.</p>
+                        </div>
+
+                        <button class="btn-action btn-pay-confirm" onclick="finalizarPagamento()">CONFIRMAR E PAGAR</button>
+                    </div>
+
+                    <!-- RESUMO DA COMPRA -->
+                    <div class="checkout-summary-card">
+                        <h3>RESUMO DO PEDIDO</h3>
+                        <div class="summary-line">
+                            <span>Subtotal:</span>
+                            <span id="checkout-subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Desconto PIX (5%):</span>
+                            <span id="checkout-discount" style="color: var(--neon-green)">- R$ 0,00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Frete eSports:</span>
+                            <span class="free-badge">GRÁTIS</span>
+                        </div>
+                        <div class="summary-line total-line">
+                            <span>TOTAL:</span>
+                            <span id="checkout-final-total">R$ 0,00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABA 4: HARDWARE -->
+            <section id="content-hardware" class="tab-pane">
+                <div class="section-header">
+                    <h2>CONFIGURAÇÃO DO RIG</h2>
+                </div>
+
+                <form onsubmit="salvarFormulario(event, 'Configurações de Hardware salvas!')" class="cyber-form">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="resolucao">RESOLUÇÃO DO MONITOR</label>
+                            <select id="resolucao" name="resolucao">
+                                <option value="1080p">1920x1080 (Full HD - 240Hz Ready)</option>
+                                <option value="1440p">2560x1440 (Quad HD - 165Hz)</option>
+                                <option value="4k">3840x2160 (4K Ultra HD - 144Hz)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="fps">TARGET FPS (TAXA DE QUADROS)</label>
+                            <input type="number" id="fps" name="fps" min="30" max="360" value="240" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="observacoes">OBSERVAÇÕES E ESPECIFICAÇÕES DO PC</label>
+                        <textarea id="observacoes" name="observacoes" rows="4" placeholder="Ex: Processador i7/Ryzen 7, GPU RTX 4070..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-action">SALVAR SETUP</button>
+                </form>
+            </section>
+
+            <!-- ABA 5: CADASTRO -->
+            <section id="content-cadastro" class="tab-pane">
+                <div class="section-header">
+                    <h2>DADOS DO PLAYER</h2>
+                </div>
+
+                <form onsubmit="salvarFormulario(event, 'Perfil do jogador atualizado!')" class="cyber-form">
+                    <div class="input-group">
+                        <label for="cliente-nome">NOME COMPLETO *</label>
+                        <input type="text" id="cliente-nome" name="nome" placeholder="Ex: Gabriel 'Fallen' Toledo" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="cliente-email">E-MAIL *</label>
+                            <input type="email" id="cliente-email" name="email" placeholder="player@esports.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="cliente-telefone">TELEFONE / WHATSAPP</label>
+                            <input type="tel" id="cliente-telefone" name="telefone" placeholder="(11) 99999-9999">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-action">SALVAR PERFIL</button>
+                </form>
+            </section>
+
+            <!-- ABA 6: CONTATO -->
+            <section id="content-contato" class="tab-pane">
+                <div class="section-header">
+                    <h2>CENTRAL DE SUPORTE</h2>
+                </div>
+
+                <div class="contact-layout">
+                    <form onsubmit="salvarFormulario(event, 'Mensagem enviada com sucesso!')" class="cyber-form">
+                        <div class="input-group">
+                            <label for="contato-nome">NOME</label>
+                            <input type="text" id="contato-nome" name="nome" placeholder="Digite seu nome" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contato-email">E-MAIL DE CONTATO</label>
+                            <input type="email" id="contato-email" name="email" placeholder="seuemail@exemplo.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="contato-mensagem">MENSAGEM</label>
+                            <textarea id="contato-mensagem" name="mensagem" rows="4" placeholder="Descreva sua dúvida..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-action">ENVIAR MENSAGEM</button>
+                    </form>
+
+                    <div class="direct-contact-card">
+                        <h3>ATENDIMENTO DIRETO</h3>
+                        <p>Prefere suporte em tempo real? Fale com nosso time via WhatsApp:</p>
+                        <a href="https://web.whatsapp.com" target="_blank" class="btn-whatsapp">
+                            💬 CHAT VIA WHATSAPP
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- CONTÊINER DE TOASTS JS -->
+    <div id="toast-container"></div>
+
+    <!-- RODAPÉ -->
+    <footer class="main-footer">
+        <div class="footer-line"></div>
+        <p>PIXELGEAR ESPORTS STORE — CONTATO: <a href="mailto:contato@pixelegear.com">CONTATO@PIXELEGEAR.COM</a></p>
+        <p class="copy">© 2026 PIXELGEAR STORE. TODOS OS DIREITOS RESERVADOS.</p>
+    </footer>
+
+    <!-- JS DA APLICAÇÃO -->
+    <script src="script.js"></script>
+</body>
+</html>
